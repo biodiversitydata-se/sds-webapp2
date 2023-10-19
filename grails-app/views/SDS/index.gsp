@@ -16,11 +16,14 @@ The Sensitive Data Service (SDS) is the mechanism for providing security over da
     <li>Pest Sensitivity. Species are passed through a set of rules based on categories as defined in the <b>Plant Biosecurity Sensitive Data Service</b></li>
 </ul>
 For more information see <a href="${grailsApplication.config.sdsFAQ.url}">Data Sensitivity</a>.
-<h2>Testing</h2>
-<p>
-The Sensitive Data Service can be tested through the <a href="${grailsApplication.config.sandbox.url}">sandbox</a>. Simply upload your list of species and coordinates and the
-individual record pages of the sandbox will indicate whether or not sensitivity was detected.
-</p>
+<g:if test="${grailsApplication.config.sandbox.url}">
+    <h2>Testing</h2>
+    <p>
+    The Sensitive Data Service can be tested through the <a href="${grailsApplication.config.sandbox.url}">sandbox</a>. Simply upload your list of species and coordinates and the
+    individual record pages of the sandbox will indicate whether or not sensitivity was detected.
+    </p>
+</g:if>
+
 <h2>Resources</h2>
 <p>The Sensitive Data Service is controlled through a set of XML files.</p>
 
