@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  nameindex:
+    image: ghcr.io/biodiversitydata-se/ala-name-matching-index:1.0.0
+    volumes:
+      - data_nameindex:/data/lucene/namematching
+
+  sds:
+    image: sbdi/sds-webapp2-dev
+    build:
+      context: .
+      no_cache: true
+    environment:
+      - JAVA_OPTS=-Xmx1g -Xms128m -Xss256k -Djava.awt.headless=true
+    volumes:
+      - data_nameindex:/data/lucene/namematching
+      - ./sbdi/data/config/sds-config.properties:/data/sds/config/sds-config.properties
+    ports:
+      - 8080:8080
+
+volumes:
+  data_nameindex:
