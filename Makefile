@@ -17,4 +17,4 @@ run-docker: package
 	docker compose -f docker-compose.yml up --detach
 
 release:
-	@./sbdi/make-release.sh
+	../sbdi-install/utils/make-release.sh
