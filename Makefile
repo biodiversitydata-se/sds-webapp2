@@ -6,8 +6,8 @@ index:
 	sudo mkdir -p /data/lucene/namematching
 	docker compose -f nameindex.yml up --detach nameindex
 
-run: index
-	./gradlew clean bootRun
+run:
+	./gradlew bootRun
 
 clean:
 	docker compose -f nameindex.yml down nameindex
