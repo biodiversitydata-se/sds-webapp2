@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   nameindex:
     image: ghcr.io/biodiversitydata-se/ala-name-matching-index:1.0.0
